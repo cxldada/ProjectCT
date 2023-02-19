@@ -1,3 +1,3 @@
 # project-CT
 
-CTGF(Chen & Tan Framework)
+CTF(Chen & Tan Framework)

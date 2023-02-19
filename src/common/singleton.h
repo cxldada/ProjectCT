@@ -23,7 +23,7 @@ public:
     Singleton(const T &&) = delete;
     T &operator=(const T &) = delete;
 
-    static T &GetInstance() {
+    static T &Instance() {
         static T instance;
         return instance;
     }
