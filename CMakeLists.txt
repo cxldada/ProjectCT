@@ -20,6 +20,7 @@ add_compile_options(-g -Wall)
 
 include_directories("src/common")
 include_directories("src/framework")
+include_directories("third/spdlog/include")
 add_subdirectory(src/framework)
 
 
