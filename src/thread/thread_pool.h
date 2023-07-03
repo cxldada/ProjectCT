@@ -52,17 +52,6 @@ public:
         return m_Stop;
     }
 
-    /**
-     * @brief 提交任务
-     *
-     * @tparam Func 函数对象
-     * @tparam Args 函数参数
-     * @param f
-     * @param args
-     */
-    template <typename Func, typename... Args>
-    auto Submit(Func &&f, Args &&...args);
-
 private:
     void Worker();
 
@@ -73,31 +62,6 @@ private:
     std::mutex m_QueMutex;
     std::condition_variable m_ConditionLock;
 };
-
-template <typename Func, typename... Args>
-auto ThreadPool::Submit(Func &&f, Args &&...args) {
-    // 定义函数返回值类型
-    using return_type = typename std::result_of<Func(Args...)>::type;
-
-    // packaged_task不允许拷贝，所以使用智能指针
-    auto task = std::make_shared<std::packaged_task<return_type()>>(std::bind(std::forward<Func>(f), std::forward<Args>(args)...));
-    std::future<return_type> res = task->get_future();
-
-    // 加入任务队列
-    {
-        std::unique_lock<std::mutex> lock(m_QueMutex);
-
-        if (IsStop())
-            throw std::runtime_error("enqueue on stopped ThreadPool");
-
-        m_Tasks.push([task]() {
-            (*task)();
-        });
-    }
-
-    m_ConditionLock.notify_all();
-    return res;
-}
 
 }  // namespace thread
 }  // namespace CT

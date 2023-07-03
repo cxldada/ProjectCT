@@ -9,8 +9,7 @@
  *
  */
 
-#ifndef _CT_FRAMEWORK_ACTOR_H_
-#define _CT_FRAMEWORK_ACTOR_H_
+#pragma once
 
 #include "MsgQueueMgr.h"
 
@@ -29,18 +28,8 @@
 // TODO 最好改成可配置项
 #define THREADCOUNT 8
 
-using namespace std;
-
-class actor : public Singleton<actor> {
-    // friend class Singleton<actor>;
-private:
+class Actor : public Singleton<Actor> {
 public:
-    actor(/* args */){};
-    ~actor(){};
-
-    bool start();
-    unique_ptr<void> thread_worker();
-    // MsgQueueMgr* actor_context_message_dispatch(skynet_monitor *sm, message_queue *q, int weight);
+    Actor(/* args */){};
+    ~Actor(){};
 };
-
-#endif  // _CT_FRAMEWORK_ACTOR_H_

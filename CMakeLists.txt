@@ -7,7 +7,7 @@ project(CT VERSION 0.0.1 LANGUAGES CXX)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # 设置c++标准
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -16,14 +16,13 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 
+# 设置编译参数
 add_compile_options(-g -Wall)
 
-include_directories("src/common")
-include_directories("src/framework")
-include_directories("third/spdlog/include")
-add_subdirectory(src/framework)
+# 设置头文件路径
+include_directories("third")
 
-
+# 框架源码
+add_subdirectory(src)
 # 测试代码
-add_executable(CT src/main.cc)
-target_link_libraries(CT ctf)
+add_subdirectory(test)

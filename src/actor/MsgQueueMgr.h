@@ -8,9 +8,8 @@
  * @copyright Copyright (c) 2021
  *
  */
+#pragma once
 
-#ifndef _CT_FRAMEWORK_MQ_H_
-#define _CT_FRAMEWORK_MQ_H_
 #include <thread>
 #include <mutex>
 
@@ -59,10 +58,8 @@ public:
 };
 
 //线程分发出来的消息全部存在这个总消息池里
-typedef struct global_queue {
+struct global_queue {
     MsgQueueMgr* head{nullptr};
     MsgQueueMgr* tail{nullptr};
     std::mutex Mutex;
 };
-
-#endif  // _CT_FRAMEWORK_MQ_H_
