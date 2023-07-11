@@ -8,9 +8,7 @@
  * @copyright Copyright (c) 2021
  *
  */
-
-#ifndef _CT_FRAMEWORK_SINGLETON_H_
-#define _CT_FRAMEWORK_SINGLETON_H_
+#pragma once
 
 template <class T>
 class Singleton {
@@ -28,5 +26,3 @@ public:
         return instance;
     }
 };
-
-#endif  // _CT_FRAMEWORK_SINGLETON_H_

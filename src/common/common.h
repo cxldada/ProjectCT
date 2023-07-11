@@ -8,14 +8,10 @@
  * @copyright Copyright (c) 2021
  * 
  */
-
-#ifndef _CT_FRAMEWORK_COMMON_H_
-#define _CT_FRAMEWORK_COMMON_H_
+#pragma once
 
 #include <memory>            // capacity pointer
 #include <string>            // c++ string
 #include <functional>        // function obj
 #include <initializer_list>  // init list
 #include <type_traits>       // traits
-
-#endif  //_CT_FRAMEWORK_COMMON_H_

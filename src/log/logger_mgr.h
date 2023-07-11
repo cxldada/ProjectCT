@@ -8,9 +8,7 @@
  * @copyright Copyright (c) 2021
  *
  */
-
-#ifndef _CT_LOG_LOGGER_MGR_H_
-#define _CT_LOG_LOGGER_MGR_H_
+#pragma once
 
 #include "common.h"
 #include "singleton.h"
@@ -28,5 +26,3 @@ private:
 
 }  // namespace Log
 }  // namespace CT
-
-#endif  // _CT_LOG_LOGGER_MGR_H_

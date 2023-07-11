@@ -8,9 +8,7 @@
  * @copyright Copyright (c) 2021
  *
  */
-
-#ifndef _CT_FRAMEWORK_DAEMON_H_
-#define _CT_FRAMEWORK_DAEMON_H_
+#pragma once
 
 #include <stdlib.h>
 #include <unistd.h>
@@ -83,5 +81,3 @@ namespace CT {
         return 0;
     }
 }
-
-#endif  // _CT_FRAMEWORK_DAEMON_H_

@@ -8,9 +8,7 @@
  * @copyright Copyright (c) 2021
  *
  */
-
-#ifndef _CT_FRAMEWORK_THREAD_POOL_H_
-#define _CT_FRAMEWORK_THREAD_POOL_H_
+ #pragma once
 
 #include <thread>
 #include <vector>
@@ -65,5 +63,3 @@ private:
 
 }  // namespace thread
 }  // namespace CT
-
-#endif  //_CT_FRAMEWORK_THREAD_POOL_H_
